@@ -1,4 +1,7 @@
+package fileutils;
+
 import model.Employee;
+import model.ReportDefinition;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -11,21 +14,20 @@ import java.util.List;
 
 public class JSONUtils {
     private static final String FILEPATH = "src/main/resources/";
-    private static final String FILEEXTENSION = ".json";
+    private static final String FILE_EXTENSION = ".json";
 
 
-    public static List<Employee> readEmployees(String filename) throws IOException {
-        List<Employee> employees = new ArrayList<Employee>();
+    public static List<Employee> getEmployees(String filename) throws IOException {
+        List<Employee> employees = new ArrayList<>();
 
         JSONParser parser = new JSONParser();
         JSONArray jsonArr = null;
-        try {
-            jsonArr = (JSONArray) parser
-                    .parse(new FileReader(FILEPATH + filename + FILEEXTENSION));
+
+        try (FileReader fileReader = new FileReader(FILEPATH + filename + FILE_EXTENSION)) {
+            jsonArr = (JSONArray) parser.parse(fileReader);
         } catch (ParseException e) {
             System.out.println("!!! Corrupted file !!!");
             e.printStackTrace();
-            return null;
         }
 
         if (jsonArr != null) {
@@ -33,15 +35,38 @@ public class JSONUtils {
                 Employee employee = new Employee();
                 JSONObject empJson = (JSONObject) o;
                 employee.setName((String) empJson.get("name"));
-                employee.setTotalSales((Long) empJson.get("totalSales"));
-                employee.setSalesPeriod((Long) empJson.get("salesPeriod"));
+                employee.setTotalSales(((Long) empJson.get("totalSales")).intValue());
+                employee.setSalesPeriod(((Long) empJson.get("salesPeriod")).intValue());
                 employee.setExperienceMultiplier((Double) empJson.get("experienceMultiplier"));
                 employees.add(employee);
             }
         }
-
         return employees;
     }
+
+
+    public static ReportDefinition getReportDefinition(String filename) throws IOException {
+        ReportDefinition reportDefinition = new ReportDefinition();
+
+        JSONParser parser = new JSONParser();
+        JSONObject jsonObject = null;
+
+        try (FileReader fileReader = new FileReader(FILEPATH + filename + FILE_EXTENSION)) {
+            jsonObject = (JSONObject) parser.parse(fileReader);
+        } catch (ParseException e) {
+            System.out.println("!!! Corrupted file !!!");
+            e.printStackTrace();
+        }
+
+        if (jsonObject != null) {
+            reportDefinition.setTopPerformersThreshold(((Long) jsonObject.get("topPerformersThreshold")).intValue());
+            reportDefinition.setUseExprienceMultiplier((Boolean) jsonObject.get("useExprienceMultiplier"));
+            reportDefinition.setPeriodLimit(((Long) jsonObject.get("periodLimit")).intValue());
+        }
+
+        return reportDefinition;
+    }
+
 
 //    public static Employee test() {
 //        JSONParser parser = new JSONParser();

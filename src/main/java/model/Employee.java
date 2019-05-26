@@ -4,14 +4,14 @@ import java.io.Serializable;
 
 public class Employee implements Serializable {
     private String name;
-    private long totalSales;
-    private long salesPeriod;
+    private int totalSales;
+    private int salesPeriod;
     private double experienceMultiplier;
 
     public Employee() {
     }
 
-    public Employee(String name, long totalSales, long salesPeriod, double experienceMultiplier) {
+    public Employee(String name, int totalSales, int salesPeriod, double experienceMultiplier) {
         this.name = name;
         this.totalSales = totalSales;
         this.salesPeriod = salesPeriod;
@@ -28,19 +28,19 @@ public class Employee implements Serializable {
         this.name = name;
     }
 
-    public long getTotalSales() {
+    public int getTotalSales() {
         return totalSales;
     }
 
-    public void setTotalSales(long totalSales) {
+    public void setTotalSales(int totalSales) {
         this.totalSales = totalSales;
     }
 
-    public long getSalesPeriod() {
+    public int getSalesPeriod() {
         return salesPeriod;
     }
 
-    public void setSalesPeriod(long salesPeriod) {
+    public void setSalesPeriod(int salesPeriod) {
         this.salesPeriod = salesPeriod;
     }
 
