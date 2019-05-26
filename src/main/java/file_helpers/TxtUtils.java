@@ -14,7 +14,7 @@ public class TxtUtils {
     public static void writeResults(String filename, List<Employee> employees) {
         try (FileWriter fileWriter = new FileWriter(FILEPATH + filename + FILEEXTENSION);
                 BufferedWriter bw = new BufferedWriter(fileWriter)) {
-            bw.write("Name                , Score");
+            bw.write("Name,                 Score");
             bw.write(System.getProperty("line.separator"));
             for (Employee emp : employees) {
                 bw.write(createLine(emp.getName(), emp.getScore()));

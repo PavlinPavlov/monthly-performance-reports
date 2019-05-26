@@ -1,0 +1,16 @@
+Name,                 Score
+John Smith,           25.0
+David Prowless,       25.0
+Amy Swan,             19.0
+Maria Roberts,        11.0
+Tony Simpson,         13.0
+Dora Peterson,        37.0
+Atanas Dimitrov,      63.0
+Hano Win,             30.0
+Jes Quintina,         26.0
+Tim Roberts,          61.0
+Ron Marchev,          58.0
+Stamat Georgiev,      47.0
+Eve Dor,              60.0
+Olga Konachenko,      28.0
+Tonin Recio,          18.0

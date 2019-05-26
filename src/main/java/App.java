@@ -37,5 +37,6 @@ public class App {
         List<Employee> result = Filter.filter(employees, reportDefinition);
 
         TxtUtils.writeResults(outFile, result);
+        //TxtUtils.writeResults(outFile, employees);
     }
 }
