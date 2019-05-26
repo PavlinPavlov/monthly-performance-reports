@@ -1,5 +1,6 @@
 import file_helpers.JSONUtils;
-import file_helpers.TxtUtils;
+import file_helpers.CsvFileUtils;
+import models.CsvEmpModel;
 import models.Employee;
 import models.ReportDefinition;
 import utils.Calculator;
@@ -12,7 +13,7 @@ public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         List<Employee> employees;
-        ReportDefinition reportDefinition = null;
+        ReportDefinition reportDefinition;
 
         while (true) {
             System.out.print("Enter file with data: ");
@@ -24,7 +25,8 @@ public class App {
                 employees = JSONUtils.getEmployees(fileData);
                 reportDefinition = JSONUtils.getReportDefinition(fileDefinition);
                 break;
-            } catch (IOException e) {
+            }
+            catch (IOException e) {
                 System.out.println("No such files!\n");
                 System.out.println("Enter again!");
             }
@@ -34,9 +36,8 @@ public class App {
         String outFile = scanner.nextLine();
 
         Calculator.calculateScores(employees, reportDefinition.isUseExperienceMultiplier());
-        List<Employee> result = Filter.filter(employees, reportDefinition);
+        List<CsvEmpModel> result = Filter.filter(employees, reportDefinition);
 
-        TxtUtils.writeResults(outFile, result);
-        //TxtUtils.writeResults(outFile, employees);
+        CsvFileUtils.writeResults(outFile, result);
     }
 }

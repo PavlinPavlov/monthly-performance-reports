@@ -1,8 +1,0 @@
-Name,                 Score
-Atanas Dimitrov,      63.0
-Tim Roberts,          61.0
-Eve Dor,              60.0
-Stamat Georgiev,      47.0
-Dora Peterson,        37.0
-Tonin Recio,          32.0
-Hano Win,             30.0
