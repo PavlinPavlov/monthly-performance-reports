@@ -1,30 +1,28 @@
-import fileutils.JSONUtils;
-import fileutils.TxtUtils;
-import model.Employee;
-import model.ReportDefinition;
+import file_helpers.JSONUtils;
+import file_helpers.TxtUtils;
+import models.Employee;
+import models.ReportDefinition;
+import utils.Calculator;
+import utils.Filter;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        List<Employee> employees = null;
+        List<Employee> employees;
         ReportDefinition reportDefinition = null;
 
         while (true) {
-            try {
-                System.out.print("Enter file with data: ");
-                String fileData = scanner.nextLine();
-                System.out.print("Enter file with definition: ");
-                String fileDefinition = scanner.nextLine();
+            System.out.print("Enter file with data: ");
+            String fileData = scanner.nextLine();
+            System.out.print("Enter file with definition: ");
+            String fileDefinition = scanner.nextLine();
 
+            try {
                 employees = JSONUtils.getEmployees(fileData);
                 reportDefinition = JSONUtils.getReportDefinition(fileDefinition);
-
                 break;
             } catch (IOException e) {
                 System.out.println("No such files!\n");
@@ -35,13 +33,9 @@ public class App {
         System.out.print("Enter name of output file: ");
         String outFile = scanner.nextLine();
 
+        Calculator.calculateScores(employees, reportDefinition.isUseExperienceMultiplier());
+        List<Employee> result = Filter.filter(employees, reportDefinition);
 
-        Map<String, Double> map = new HashMap<>();
-        map.put("David Prowless", 12.6);
-        map.put("Ivan1", 2.6);
-        map.put("Ivan2", 42.6);
-        map.put("Ivan3", 13.0);
-
-        TxtUtils.writeResults("test", map);
+        TxtUtils.writeResults(outFile, result);
     }
 }

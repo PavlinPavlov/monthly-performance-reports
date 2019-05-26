@@ -1,7 +1,7 @@
-package fileutils;
+package file_helpers;
 
-import model.Employee;
-import model.ReportDefinition;
+import models.Employee;
+import models.ReportDefinition;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -60,29 +60,10 @@ public class JSONUtils {
 
         if (jsonObject != null) {
             reportDefinition.setTopPerformersThreshold(((Long) jsonObject.get("topPerformersThreshold")).intValue());
-            reportDefinition.setUseExprienceMultiplier((Boolean) jsonObject.get("useExprienceMultiplier"));
+            reportDefinition.setUseExperienceMultiplier((Boolean) jsonObject.get("useExperienceMultiplier"));
             reportDefinition.setPeriodLimit(((Long) jsonObject.get("periodLimit")).intValue());
         }
 
         return reportDefinition;
     }
-
-
-//    public static Employee test() {
-//        JSONParser parser = new JSONParser();
-//        Gson gson = new Gson();
-//        Employee employee = null;
-//        try {
-//            JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("src\\main\\resources\\test.json"));
-//            employee = gson.fromJson(jsonObject.toString(), Employee.class);
-//            System.out.println(employee.getName());
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        return employee;
-//    }
 }

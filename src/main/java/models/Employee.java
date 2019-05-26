@@ -1,4 +1,4 @@
-package model;
+package models;
 
 import java.io.Serializable;
 
@@ -7,6 +7,8 @@ public class Employee implements Serializable {
     private int totalSales;
     private int salesPeriod;
     private double experienceMultiplier;
+
+    private double score;
 
     public Employee() {
     }
@@ -52,6 +54,14 @@ public class Employee implements Serializable {
         this.experienceMultiplier = experienceMultiplier;
     }
 
+    public double getScore() {
+        return score;
+    }
+
+    public void setScore(double score) {
+        this.score = score;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -59,6 +69,7 @@ public class Employee implements Serializable {
                 ", totalSales=" + totalSales +
                 ", salesPeriod=" + salesPeriod +
                 ", experienceMultiplier=" + experienceMultiplier +
+                ", score=" + score +
                 '}';
     }
 }

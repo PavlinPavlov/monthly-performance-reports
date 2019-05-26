@@ -10,5 +10,17 @@
     "totalSales": 250,
     "salesPeriod": 10,
     "experienceMultiplier": 0.5
+  },
+  {
+    "name": "Amy Wice",
+    "totalSales": 330,
+    "salesPeriod": 17,
+    "experienceMultiplier": 0.8
+  },
+  {
+    "name": "Mari Gonzales",
+    "totalSales": 83,
+    "salesPeriod": 2,
+    "experienceMultiplier": 1.5
   }
 ]

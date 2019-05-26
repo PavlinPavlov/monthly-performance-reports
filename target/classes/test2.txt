@@ -2,4 +2,3 @@ Name                , Score
 John Smith          , 25.0
 David Prowless      , 25.0
 Amy Wice            , 19.0
-Mari Gonzales       , 41.0

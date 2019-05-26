@@ -1,20 +1,21 @@
-package model;
+package models;
 
 public class ReportDefinition {
     private int topPerformersThreshold;
-    private boolean useExprienceMultiplier;
+    private boolean useExperienceMultiplier;
     private int periodLimit;
 
     public ReportDefinition() {
     }
 
-    public ReportDefinition(int topPerformersThreshold, boolean useExprienceMultiplier, int periodLimit) {
+    public ReportDefinition(int topPerformersThreshold, boolean useExperienceMultiplier, int periodLimit) {
         this.topPerformersThreshold = topPerformersThreshold;
-        this.useExprienceMultiplier = useExprienceMultiplier;
+        this.useExperienceMultiplier = useExperienceMultiplier;
         this.periodLimit = periodLimit;
     }
 
     //Getters, Setters
+
     public int getTopPerformersThreshold() {
         return topPerformersThreshold;
     }
@@ -23,12 +24,12 @@ public class ReportDefinition {
         this.topPerformersThreshold = topPerformersThreshold;
     }
 
-    public boolean isUseExprienceMultiplier() {
-        return useExprienceMultiplier;
+    public boolean isUseExperienceMultiplier() {
+        return useExperienceMultiplier;
     }
 
-    public void setUseExprienceMultiplier(boolean useExprienceMultiplier) {
-        this.useExprienceMultiplier = useExprienceMultiplier;
+    public void setUseExperienceMultiplier(boolean useExperienceMultiplier) {
+        this.useExperienceMultiplier = useExperienceMultiplier;
     }
 
     public int getPeriodLimit() {
