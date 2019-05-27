@@ -51,7 +51,7 @@
     "name": "Jes Quintina",
     "totalSales": 320,
     "salesPeriod": 12,
-    "experienceMultiplier": 0.1
+    "experienceMultiplier": 0.5
   },
   {
     "name": "Tim Roberts",
@@ -88,5 +88,35 @@
     "totalSales": 230,
     "salesPeriod": 7,
     "experienceMultiplier": 0.75
+  },
+  {
+    "name": "Danny Williams",
+    "totalSales": 660,
+    "salesPeriod": 17,
+    "experienceMultiplier": 0.9
+  },
+  {
+    "name": "Gabriela Demiro",
+    "totalSales": 130,
+    "salesPeriod": 4,
+    "experienceMultiplier": 0.75
+  },
+  {
+    "name": "Slav Tomov",
+    "totalSales": 830,
+    "salesPeriod": 15,
+    "experienceMultiplier": 1.0
+  },
+  {
+    "name": "Eva Scheene",
+    "totalSales": 600,
+    "salesPeriod": 7,
+    "experienceMultiplier": 1.75
+  },
+  {
+    "name": "Tonin Recio",
+    "totalSales": 110,
+    "salesPeriod": 2,
+    "experienceMultiplier": 1.05
   }
 ]

@@ -1,5 +1,5 @@
 {
-  "topPerformersThreshold": 50,
+  "topPerformersThreshold": 30,
   "useExperienceMultiplier": true,
   "periodLimit": 10
 }
